@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&family=Kanit:wght@100&family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+
+    font-family: 'Inconsolata', sans-serif;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(wallhaven-6ky2w7.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.menu {
+    font-size: 20px;
+    text-align: left;
+    text-decoration: underline;
+    max-width: 1200px;
+    
+    min-width: 320px;
+}
+
