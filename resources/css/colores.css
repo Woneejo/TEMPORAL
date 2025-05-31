@@ -1,0 +1,12 @@
+/* VARIABLES */
+
+:root {
+    --feed: rgb(255,255,255);
+    --azul-opacidad:white;
+    --bg-menu-variant1: rgb(20,211,166);
+    --bg-menu-variant2: rgb(255,255,255);
+    --bg-subMenu: rgb(35, 35, 35);
+    --color-letras-variant1: black;
+    --color-letras-variant2: black;
+    /* --bg-body: #ff0000; */
+}

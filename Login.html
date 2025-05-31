@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale">
+        <title>serviceDesk</title>
+        <!--Estilos y/o Fuentes-->
+        <link rel="stylesheet" href="{{ asset('assets/estilo.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/colores.css') }}">
+    </head>
+ 
+    <body onload="inicializarLogin()">
+        <div id="contenedorGrid" class="contenedor-grid">
+        <div class="header">
+            <div class="navigation">
+                <h1></h1>
+                <div class="mod">
+                    <label class="container">
+                        <input checked="checked" type="checkbox" id="modoNocturno">
+                        <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="moon"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg>
+                        <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="sun"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path></svg>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    <div class="caja-form">
+        <div class="card">
+            <div class="container-banner">
+                <div class="logo">
+                    <img src="resources/images/logo.png" style="width: 200px" alt="">
+                    <span>serviceDesk</span>
+                </div>
+                <div class="more-info">
+                    <button class="faq-button"><a href="vistas/dashboard.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                          <path
+                            d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
+                          ></path>
+                        </svg>
+                        <span class="tooltip">Info</span></a>
+                      </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-contenedor">
+            <div class="form-columna">
+                <div class="boton-box">
+                    <button class="boton b-1" id="login">Inciar sesion</button>
+                    <button class="boton b-2" id="registro">Registrate</button>
+                </div>
+    
+                <!--Contenedor del Login-->            
+                <form class="form-box login-form">
+                    <div class="form-titulo">
+                        <span>Inicia Sesion</span>
+                    </div>
+                    <div class="form-inputs">
+                        <div class="input-box">
+                            <input type="number" class="inputs input-campo" placeholder="Cedula">
+                            <ion-icon name="person-outline" class="icono"></ion-icon>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="inputs input-campo" placeholder="Contrasena">
+                        <ion-icon name="lock-closed-outline" class="icono"></ion-icon>
+                </div>
+                <div class="recuerdame">
+                    <label class="container-checkbox">
+                        <input type="checkbox">
+                        <div class="checkmark"></div>
+                        <span>Recuerdame</span>
+                      </label>
+                </div>
+                <div class="olvidaste-contrasena">
+                    <a href="#">¿Olvidaste tu contrasena?</a>
+                </div>
+                <div class="input-box">
+                    <button class="inputs iniciar-btn">Iniciar Sesión</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    
+            <!--LLAMEN A DIOS POR QUE VIENE EL CONTENEDOR DEL REGISTRO-->
+            <form class="form-box registro-form">
+                <div class="form-titulo">
+                    <span>Registrate</span>
+                </div>
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <input type="number" class="inputs input-campo" placeholder="Cedula">
+                        <ion-icon name="person-outline" class="icono"></ion-icon>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="inputs input-campo" placeholder="Contrasena" minlength="8" maxlength="16">
+                    <ion-icon name="lock-closed-outline" class="icono"></ion-icon>
+            </div>
+            <div class="input-box">
+                <input type="password" class="inputs input-campo" placeholder="Contrasena" minlength="8" maxlength="16">
+                <ion-icon name="lock-closed-outline" class="icono"></ion-icon>
+        </div>
+            <div class="input-box">
+                <button class="inputs iniciar-btn">Crear Cuenta</button>
+            </div>
+            </form>
+        </div>
+</div>
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       <link rel="stylesheet" href="{{ asset('assets/colores.css') }}">
+    <script src="{{ asset('assets/app.js') }}"></script>
+    <!--Link Rel de los iconos utilitarios-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    
+    
+    
+    
+    
+    
+</body>
+    
+</html>

@@ -1,0 +1,532 @@
+
+/*Checkbox modo Nocturno*/
+/* importacion check para modo nocturno*/
+/* From Uiverse.io by catraco */ 
+/*------ Settings ------*/
+.container {
+  --color: #a5a5b0;
+  --size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+}
+
+.container .moon {
+  position: absolute;
+  animation: keyframes-fill .5s;
+  fill: var(--color);
+}
+
+.container .sun {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill .5s;
+  fill: rgb(240, 173, 15);
+}
+
+/* ------ On check event ------ */
+.container input:checked ~ .moon {
+  display: none;
+}
+
+.container input:checked ~ .sun {
+  display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+  0% {
+    transform: rotate(-360deg) scale(0);
+    opacity: 0;
+  }
+
+  75% {
+    transform: rotate(25deg);
+  }
+}
+
+/* Checkbox de Recordar Contraseña Bonito */
+
+/* Hide the default checkbox */
+.container-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container-checkbox {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    user-select: none;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    --clr: #0B6E4F;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: 300ms;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container-checkbox input:checked ~ .checkmark {
+    background-color: var(--clr);
+    border-radius: .5rem;
+    animation: pulse 500ms ease-in-out;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container-checkbox .checkmark:after {
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid #E0E0E2;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 #0B6E4F90;
+      rotate: 20deg;
+    }
+  
+    50% {
+      rotate: -20deg;
+    }
+  
+    75% {
+      box-shadow: 0 0 0 10px #0B6E4F60;
+    }
+  
+    100% {
+      box-shadow: 0 0 0 13px #0B6E4F30;
+      rotate: 0;
+    }
+  }
+
+/* Botones Bonitos */
+.iniciar-btn {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--bg-subMenu);
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+.iniciar-btn:hover {
+    letter-spacing: 3px;
+    background-color: var(--bg-menu-variant1);
+    color: hsl(0, 0%, 100%);
+    box-shadow: var(--bg-menu-variant1) 0px 7px 29px 0px;
+  }
+  
+.iniciar-btn:active {
+    letter-spacing: 3px;
+    background-color: var(--bg-menu-variant1);
+    color: hsl(0, 0%, 100%);
+    box-shadow: var(--bg-menu-variant1) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+  
+
+/*contenedor grid*/
+
+.contenedor-grid {
+	display: grid;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	transition: 1s;
+	grid-template-rows: 15% 100%;
+	
+}
+
+.header{
+	grid-row-start: 1;
+	grid-row-end: 2;
+	background-color: rgb(35, 35, 35);
+	border-bottom: 2px solid grey;
+	color: white;
+	max-height: 100%;
+}
+
+.header .navigation{
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+
+.header .mod{
+	margin-left: 90%;
+	display: flex;
+	height: 100%;
+	text-align: right;
+	align-items: center;
+}
+.caja-form{
+  display: flex;
+  grid-row-start: 2;
+	grid-row-end: 3;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+/*Caja Bonita como Banner*/
+.card {
+  justify-content: center;
+  vertical-align: middle;
+  width: 450px;
+  height: 500px;
+  border-radius: 30px 0px 0px 30px;
+  background: var(--bg-color-cajas);
+  color: var(--color-letras-variant1);
+}
+
+.card .logo{
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.container-banner{
+  height: 100%;
+}
+
+.more-info{
+  height: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+/*Tooltip ¿Quiero Saber Mas?*/
+
+/* From Uiverse.io by vinodjangid07 */ 
+.faq-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, var(--bg-menu-variant1) 0%, var(--bg-menu-variant2) 74%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.151);
+  position: relative;
+}
+.faq-button svg {
+  height: 1.5em;
+  fill: var(--color-letras-variant1);
+}
+.faq-button:hover svg {
+  animation: jello-vertical 0.7s both;
+}
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: -20px;
+  opacity: 0;
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, var(--bg-menu-variant1) 0%, var(--bg-menu-variant2) 74%);
+  color: var(--color-letras-variant1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.2s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--bg-menu-variant2);
+  background-size: 1000%;
+  background-position: center;
+  transform: rotate(45deg);
+  bottom: -15%;
+  transition-duration: 0.3s;
+}
+
+.faq-button:hover .tooltip {
+  top: -40px;
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+.faq-button:active{ 
+  animation: jello-vertical 0.7s both;
+}
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+/* BASE */
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+}
+
+/* BODY, BODY, BODY, YA DIJE BODY?*/
+body{
+    background-color: var(--feed);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* FORM CONTENEDOR*/    
+.form-contenedor{
+    background: linear-gradient(180deg, var(--bg-menu-variant1), var(--bg-menu-variant2));
+    display: flex;
+    width: 450px;
+    height: 500px;
+    border-radius: 0px 30px 30px 0px;
+    backdrop-filter: blur(20px); 
+}
+
+/*FORM COLUMNA*/
+.form-columna{
+    position: relative;
+    width: 100%;
+}
+
+/*BOTON BOX O SEA, LA CAJITA DEL LOGIN Y REGISTRO*/
+.boton-box{
+    display: flex;
+    justify-content: center;
+    gap: 10px;  
+    margin-top: 30px;
+}
+.boton{
+    font-weight: 500;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: .2s;
+}
+/*BOTON DE INICIAR SESION*/
+.b-1{
+    background: var(--bg-subMenu);
+}
+
+.b-1:active{
+    background-color:var(--bg-subMenu);
+}
+
+
+
+.boton:hover{
+    opacity: 0.85;
+}
+
+/*FORM DEL BOTON*/
+.form-box{
+    position: absolute;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    padding: 0 30px;
+    transition: .3s;
+}
+/*TITULOOOOOO*/
+.form-titulo{
+    margin: 40px 0;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+/* Login Form */
+.login-form{
+    left: 50%;
+
+}
+
+/* FORM DEL REGISTROOOOOO */
+.registro-form{
+    left: -50%;
+}
+.registro-form .form-titulo{
+    margin-block: 40px 20px;
+}
+
+/* FORM DE LOS INPUTS*/
+.form-inputs{
+    width: 100%;
+}
+.input-box{
+    position: relative;
+}
+.inputs{
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.input-campo{
+    font-size: 16px;
+    padding: 0 40px 0 20px;
+    background: rgba(255, 255, 255, 0.2);
+    outline:none;
+    backdrop-filter: blur(20px);
+}
+::placeholder{
+    color: #fff;
+    font-size: 15px;
+}
+/*ICONOS POLSIA */
+.input-box .icono{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #fff;
+    width: 17px;
+    height: 17px;
+
+}
+/* OLVIDASTE TU CONTRASENA WAZOWSKI*/
+.olvidaste-contrasena, .recuerdame{
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+}
+.olvidaste-contrasena a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.olvidaste-contrasena a:hover{
+    text-decoration: underline;
+}
+/* EL RECUERDAME MANITO */
+.recuerdame{
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.recuerdame span{
+    margin-left: 10px;
+}
+/* EL BOTON DEL MEDIO BOEEEEEE*/
